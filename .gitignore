@@ -1,0 +1,14 @@
+/target/
+/build/
+/dist/
+/temp/
+/tmp/
+/log/
+/logs/
+
+/.vscode/
+/.idea/
+
+.DS_Store
+
+.env

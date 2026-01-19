@@ -1,0 +1,72 @@
+[package]
+name = "d2fs"
+version = "1.0.1"
+edition = "2024"
+description = "(dir to fs) A lightweight RESTful filesystem server built with Axum that exposes local directories via HTTP."
+homepage = "https://github.com/foxee-rs/d2fs"
+documentation = "https://github.com/foxee-rs/d2fs/README.md"
+authors = ["foxee <qingyuehanxi@gmail.com>"]
+repository = "https://github.com/foxee-rs/d2fs"
+license = "MIT"
+readme = "README.md"
+keywords = ["fs"]
+rust-version = "1.85"
+categories = ["filesystem", "web-programming::http-server"]
+
+[dependencies]
+mimalloc = "0.1"
+tokio = { version = "1.49", features = ["full", "time"] }
+tokio-stream = "0.1"
+tokio-util = "0.7"
+tokio-metrics = "0.4"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["local-time"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+dotenvy = "0.15"
+axum = { version = "0.8", features = ["http2", "ws", "multipart"] }
+tower = "0.5"
+tower-http = { version = "0.6", features = [
+    "cors",
+    "trace",
+    "limit",
+    "request-id",
+    "timeout",
+    "set-header",
+    "compression-gzip",
+    "fs",
+] }
+tokio-cron-scheduler = "0.15"
+time = { version = "0.3", features = ["formatting", "parsing", "serde"] }
+config = "0.15"
+base64 = "0.22"
+rs-snowflake = "0.6"
+uuid = { version = "1.19", features = [
+    "v4",
+    "v7",
+    "fast-rng",
+    "macro-diagnostics",
+] }
+ulid = "1.2"
+bon = "3.8"
+unicode-normalization = "0.1"
+argon2 = "0.5"
+url = "2.5"
+reqwest = { version = "0.13", features = ["json"] }
+sea-orm = { version = "1.1", default-features = false, features = [
+    "macros",
+    "runtime-tokio-rustls",
+    "debug-print",
+    "sqlx-postgres",
+    "with-time",
+] }
+dirs = "6.0"
+notify = "8.2"
+thiserror = "2.0"
+
+[profile.release]
+panic = "abort"
+lto = "thin"
+opt-level = "s"
+codegen-units = 1
+strip = true
