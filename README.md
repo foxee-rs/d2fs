@@ -9,4 +9,25 @@
 
 </div>
 
+## Overview
+
 A lightweight RESTful filesystem server built with Axum that exposes local directories via HTTP.
+
+## Contributions
+
+All issues, questions, pull requests are extremely welcome.
+
+## License
+
+<sup>
+Licensed under either an <a href="https://github.com/foxee-rs/d2fs/blob/main/LICENSE-APACHE">Apache License, Version
+2.0</a> or <a href="https://github.com/foxee-rs/d2fs/blob/main/LICENSE-MIT">MIT license</a> at your option.
+</sup>
+
+<br>
+
+<sub>
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in this crate by you, as defined in the Apache-2.0 license, shall
+be dual licensed as above, without any additional terms or conditions.
+</sub>

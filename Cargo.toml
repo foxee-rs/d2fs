@@ -2,16 +2,16 @@
 name = "d2fs"
 version = "1.0.2"
 edition = "2024"
-description = "(dir to fs) A lightweight RESTful filesystem server built with Axum that exposes local directories via HTTP."
-homepage = "https://github.com/foxee-rs/d2fs"
-documentation = "https://github.com/foxee-rs/d2fs"
 authors = ["foxee <qingyuehanxi@gmail.com>"]
-repository = "https://github.com/foxee-rs/d2fs"
-license = "MIT"
-readme = "README.md"
+categories = ["filesystem", "web-programming::http-server"]
+description = "(dir to fs) A lightweight RESTful filesystem server built with Axum that exposes local directories via HTTP."
 keywords = ["fs"]
 rust-version = "1.85"
-categories = ["filesystem", "web-programming::http-server"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+homepage = "https://github.com/foxee-rs/d2fs"
+documentation = "https://github.com/foxee-rs/d2fs"
+repository = "https://github.com/foxee-rs/d2fs"
 
 [dependencies]
 mimalloc = "0.1"
