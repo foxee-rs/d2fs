@@ -3,15 +3,20 @@
 # d2fs (dir to fs)
 
 [![Crates.io](https://img.shields.io/crates/v/d2fs.svg)](https://crates.io/crates/d2fs)
+[![MSRV](https://img.shields.io/crates/msrv/d2fs?logo=rust&logoColor=red)](https://crates.io/crates/d2fs)
 [![Downloads](https://img.shields.io/crates/d/d2fs.svg)](https://crates.io/crates/d2fs)
-[![Documentation](https://docs.rs/d2fs/badge.svg)](https://docs.rs/d2fs)
-[![License](https://img.shields.io/crates/l/d2fs.svg)](https://github.com/foxee-rs/d2fs/blob/main/LICENSE)
+[![Status](https://img.shields.io/badge/Status-Early_Development-yellow)](#project-status)
+[![License](https://img.shields.io/crates/l/d2fs.svg)](https://github.com/foxee-rs/d2fs)
 
 </div>
 
 ## Overview
 
 A lightweight RESTful filesystem server built with Axum that exposes local directories via HTTP.
+
+## Project Status
+
+🚧 **Early Development** - APIs are subject to change.
 
 ## Contributions
 

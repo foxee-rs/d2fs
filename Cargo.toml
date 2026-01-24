@@ -1,10 +1,10 @@
 [package]
 name = "d2fs"
-version = "1.0.4"
+version = "1.0.5"
 edition = "2024"
 rust-version = "1.85"
 authors = ["foxee <qingyuehanxi@gmail.com>"]
-license = "MIT"
+license = "MIT OR Apache-2.0"
 readme = "README.md"
 documentation = "https://github.com/foxee-rs/d2fs"
 repository = "https://github.com/foxee-rs/d2fs"

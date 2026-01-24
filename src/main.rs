@@ -5,9 +5,10 @@ use crate::{
     common::{
         cfg::http::singleton_http_client,
         middleware::request_id::check_request_id,
-        util::{app, fs::init_rootfs},
+        util::{app, fs::init_fsroot},
     },
     job::scheduler::launch_job,
+    model::dto::fs::FsRoot,
     router::{BaseRouter, FsRouter},
 };
 use axum::{Extension, Router, extract::DefaultBodyLimit, middleware};
@@ -55,7 +56,7 @@ fn main() {
     rt.block_on(init());
 }
 pub async fn init() {
-    let rootfs = init_rootfs().await.expect("can't init rootfs");
+    let fsroot = init_fsroot().await.expect("can't init rootfs");
     // cors
     let cors_layer = CorsLayer::new()
         .allow_origin(AllowOrigin::mirror_request())
@@ -80,10 +81,11 @@ pub async fn init() {
                 ))
                 .layer(DefaultBodyLimit::max(500 * 1024 * 1024))
                 .layer(CompressionLayer::new())
+                .layer(Extension(FsRoot { path: fsroot.clone() }))
                 .layer(Extension(singleton_http_client())),
         );
     let res_router = Router::new()
-        .nest_service("/fs", ServeDir::new(rootfs))
+        .nest_service("/fs", ServeDir::new(fsroot))
         .fallback(app::handler_404)
         .layer(
             ServiceBuilder::new()

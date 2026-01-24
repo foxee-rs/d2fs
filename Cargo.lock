@@ -535,7 +535,7 @@ dependencies = [
 
 [[package]]
 name = "d2fs"
-version = "1.0.4"
+version = "1.0.5"
 dependencies = [
  "argon2",
  "axum",
