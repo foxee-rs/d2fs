@@ -566,6 +566,7 @@ dependencies = [
  "unicode-normalization",
  "url",
  "uuid",
+ "walkdir",
 ]
 
 [[package]]

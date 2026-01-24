@@ -56,7 +56,7 @@ fn main() {
     rt.block_on(init());
 }
 pub async fn init() {
-    let fsroot = init_fsroot().await.expect("can't init rootfs");
+    let fsroot = init_fsroot().await.expect("can't init fsroot");
     // cors
     let cors_layer = CorsLayer::new()
         .allow_origin(AllowOrigin::mirror_request())
