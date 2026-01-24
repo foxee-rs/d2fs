@@ -16,5 +16,5 @@ pub struct FsItem {
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct FsLsResult {
-    pub path: Vec<FsItem>,
+    pub item_vec: Vec<FsItem>,
 }

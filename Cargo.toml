@@ -38,8 +38,6 @@ tower-http = { version = "0.6", features = [
 ] }
 tokio-cron-scheduler = "0.15"
 time = { version = "0.3", features = ["formatting", "parsing", "serde"] }
-config = "0.15"
-base64 = "0.22"
 rs-snowflake = "0.6"
 uuid = { version = "1.19", features = [
     "v4",
@@ -48,22 +46,8 @@ uuid = { version = "1.19", features = [
     "macro-diagnostics",
 ] }
 ulid = "1.2"
-bon = "3.8"
-unicode-normalization = "0.1"
-argon2 = "0.5"
-url = "2.5"
-reqwest = { version = "0.13", features = ["json"] }
-sea-orm = { version = "1.1", default-features = false, features = [
-    "macros",
-    "runtime-tokio-rustls",
-    "debug-print",
-    "sqlx-postgres",
-    "with-time",
-] }
 dirs = "6.0"
-walkdir = "2.5"
 notify = "8.2"
-thiserror = "2.0"
 
 [profile.release]
 panic = "abort"

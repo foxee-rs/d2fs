@@ -1,9 +1,7 @@
 #![allow(dead_code)]
 #![allow(async_fn_in_trait)]
-
 use crate::{
     common::{
-        cfg::http::singleton_http_client,
         middleware::request_id::check_request_id,
         util::{app, fs::init_fsroot},
     },
@@ -11,8 +9,7 @@ use crate::{
     model::dto::fs::FsRoot,
     router::{BaseRouter, FsRouter},
 };
-use axum::{Extension, Router, extract::DefaultBodyLimit, middleware};
-use reqwest::StatusCode;
+use axum::{Extension, Router, extract::DefaultBodyLimit, http::StatusCode, middleware};
 use std::{
     net::{Ipv4Addr, SocketAddr},
     sync::atomic::{AtomicU64, Ordering},
@@ -81,8 +78,7 @@ pub async fn init() {
                 ))
                 .layer(DefaultBodyLimit::max(500 * 1024 * 1024))
                 .layer(CompressionLayer::new())
-                .layer(Extension(FsRoot { path: fsroot.clone() }))
-                .layer(Extension(singleton_http_client())),
+                .layer(Extension(FsRoot { path: fsroot.clone() })),
         );
     let res_router = Router::new()
         .nest_service("/fs", ServeDir::new(fsroot))
